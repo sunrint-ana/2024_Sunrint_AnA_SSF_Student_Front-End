@@ -1,0 +1,232 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+* {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+body {
+  display: flex;
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0;
+  margin: 0;
+  background-color: #090b59;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#snowfall {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  overflow-y: hidden;
+  background-image: url("img/bg_a.webp");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+}
+
+#treeContainer {
+  position: relative;
+  display: flex;
+  width: 60%;
+  max-width: 40vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#treeContainer .T {
+  width: 80%;
+  margin: -3.5% 0 !important;
+}
+
+#treeContainer > .M, #grow {
+  width: 90%;
+}
+
+#treeContainer img {
+  width: 100%;
+  margin: -2.5% 0;
+}
+
+#treeContainer > #grow {
+  z-index: 2;
+}
+
+#giftContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: end;
+  gap: 1%;
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+
+#giftContainer > img {
+  box-sizing: border-box;
+  width: 50%;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  transform: translateY(10%);
+}
+
+#giftContainer > img:nth-child(3n+2) {
+  transform: translateY(25%);
+}
+
+#addLayerButton {
+  z-index: 5;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.snow, .snow:before, .snow:after {
+  position: absolute;
+  top: -600px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: radial-gradient(3px 3px at 386px 77px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 487px 571px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 131px 385px, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 128px 232px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 437px 436px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 306px 147px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 309px 122px, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 13px 101px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 200px 486px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 132px 34px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 497px 294px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 572px 463px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 138px 420px, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 212px 195px, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 96px 91px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 414px 274px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 139px 396px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 561px 310px, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 161px 113px, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 106px 331px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 398px 173px, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 398px 60px, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 520px 574px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 335px 397px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 109px 523px, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 157px 84px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 260px 377px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 230px 244px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 360px 542px, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 321px 477px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0));
+  background-size: 600px 600px;
+  animation: snow 5s linear infinite;
+  content: "";
+}
+
+.snow:after {
+  margin-left: -200px;
+  opacity: 0.4;
+  animation-duration: 10s;
+  animation-direction: reverse;
+  filter: blur(3px);
+}
+
+.snow:before {
+  animation-duration: 15s;
+  animation-direction: reverse;
+  margin-left: -300px;
+  opacity: 0.65;
+  filter: blur(1.5px);
+}
+
+@keyframes snow {
+  to {
+    transform: translateY(600px);
+  }
+}
+dialog {
+  border: none;
+  background-color: #3d3fa8;
+  color: white;
+  border-radius: 1rem;
+  padding: 5%;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+}
+
+button {
+  position: relative;
+  padding: 3% 7%;
+  border: 0.1rem dashed rgba(255, 255, 255, 0.4);
+  border-radius: 1rem;
+  background-color: darkred;
+  color: white;
+}
+
+button:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+  transform: translate(-37.5%, -30%);
+  background-color: darkred;
+  z-index: -1;
+  border-radius: 1rem;
+}
+
+input {
+  padding: 2%;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #282a7b;
+  margin-top: 0.5rem;
+  color: white;
+}
+
+input:focus {
+  outline: none;
+}
+
+#giftSender {
+  width: 80%;
+  height: 60%;
+}
+
+#giftViewer {
+  width: 80%;
+  height: 40%;
+}
+
+#giftViewer > textarea {
+  height: 60% !important;
+  margin-bottom: 0 !important;
+}
+
+#giftViewer > p {
+  text-align: right;
+}
+
+#giftViewer > button, #giftSender > button {
+  padding: 2% 6%;
+}
+
+#giftSender > textarea, #giftViewer > textarea {
+  margin-top: 0.5rem;
+  box-sizing: border-box;
+  padding: 4%;
+  width: 100%;
+  height: 55%;
+  background-color: #282a7b;
+  resize: none;
+  border: none;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+#giftSender > textarea:focus {
+  outline: none;
+}
+
+#info {
+  position: absolute;
+  color: white;
+  left: 1rem;
+  top: 1rem;
+}
+
+#info button {
+  z-index: 10;
+}
+
+#info button:before {
+  transform: translate(-25%, -30%);
+}
+
+/*# sourceMappingURL=style.css.map */

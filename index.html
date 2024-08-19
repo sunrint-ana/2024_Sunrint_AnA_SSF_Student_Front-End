@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Overlap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <dialog id="login">
+        <h3>비밀번호 입력 (일치할시에만 조회 가능)</h3>
+        <input name="pass" type="password" id="pass"/>
+        <br/><br/>
+        <button id="loginfin">완료</button>
+    </dialog>
+
+    <dialog id="giftSender">
+        <h2>선물 주기</h2>
+        <label>이름</label><br/>
+        <input type="text" id="sname"/><br/><br/>
+        <label>메시지</label><br/>
+        <textarea id="smessage"></textarea>
+        <button id="send">보내기</button>
+    </dialog>
+
+    <dialog id="giftViewer">
+        <h2>ㅇㅇㅇ님의 선물</h2>
+        <textarea disabled></textarea>
+        <p>-ㅇㅇ이가-</p>
+        <button onclick="this.parentNode.close()">닫기</button>
+    </dialog>
+
+    <div id="info">
+        <h1 id="name">ㅇㅇ님의 트리</h1>
+        <button style="padding: 2% 5%;" onclick="document.querySelector('#login').showModal()">로그인</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button style="padding: 2% 5%;" onclick="document.querySelector('#giftSender').showModal()">+ 선물</button>
+    </div>
+    
+    <div id="snowfall"><div class="snow"></div></div>
+    <div id="treeContainer">
+        
+        <img class="T" src="img/T.png" id="topTree" style="top: 49%; z-index: 3">
+
+        <img class="M" src="img/M.png" style="z-index: 2">
+
+        <div id="grow"></div>
+
+        <img class="B" src="img/B.png" style="z-index: 1">
+
+        <div id="giftContainer"></div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        // document.querySelector('#giftViewer').showModal();
+
+        const gift = document.getElementById("giftContainer");
+
+        function resize() {
+            gift.style.paddingTop = document.querySelector(".T").clientHeight*0.9+"px";
+            gift.style.paddingBottom = document.querySelector(".B").clientHeight/2.7+"px";
+        }
+
+        window.onresize = resize;
+        window.onload = resize;
+    </script>
+</body>
+</html>
