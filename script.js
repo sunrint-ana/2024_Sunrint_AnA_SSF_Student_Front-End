@@ -1,4 +1,4 @@
-const endpoint = 'http://localhost:8080';
+const endpoint = 'https://ssf-backend.ana.sunrint.kr';
 
 const body = document.getElementsByTagName('body')[0];
 const grow = document.getElementById('grow');
